@@ -1,5 +1,5 @@
 public class Alarm {
-    // Atributos privados (Encapsulación, como pide el profesor)
+    // Atributos privados
     private int hour;
     private int minute;
     private String category;
@@ -7,26 +7,21 @@ public class Alarm {
     private boolean hasMathChallenge;
     private String daysOfWeek;
 
-    // Constructor: lo que pide el sistema al crear una alarma nueva
+    // Constructor
     public Alarm(int hour, int minute, String category) {
         this.hour = hour;
         this.minute = minute;
         this.category = category;
-        this.isActive = true; // Por defecto, al crearla se enciende
-        this.hasMathChallenge = false; // Por defecto no hay reto matemático
-        this.daysOfWeek = "LMXJVSD"; // Por defecto suena todos los días
+        this.isActive = true; 
+        this.hasMathChallenge = false; 
+        this.daysOfWeek = "LMXJVSD"; 
     }
 
-    // Método para imprimir la información por consola (ya que no hay interfaz gráfica)
     public void printAlarmInfo() {
-        // Formateamos la hora para que salga con dos dígitos (ej. 08:05)
         String time = String.format("%02d:%02d", hour, minute);
         System.out.println("⏰ Alarma [" + category + "] configurada a las " + time + " | Activa: " + isActive);
     }
 
-    // --- GETTERS Y SETTERS ---
-    // Métodos públicos para poder modificar y leer los datos privados
-    
     public void setActive(boolean active) {
         this.isActive = active;
     }
@@ -41,5 +36,17 @@ public class Alarm {
 
     public boolean hasMathChallenge() {
         return hasMathChallenge;
+    }
+
+    // --- MÉTODOS NUEVOS PARA QUE EL MANAGER PUEDA LEER LOS DATOS ---
+    
+    // Método para comprobar si coincide la hora
+    public boolean isTimeToRing(int currentHour, int currentMinute) {
+        return this.hour == currentHour && this.minute == currentMinute;
+    }
+
+    // Método para obtener el nombre de la categoría
+    public String getCategory() {
+        return this.category;
     }
 }
