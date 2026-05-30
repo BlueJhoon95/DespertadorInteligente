@@ -1,22 +1,30 @@
 # ⏰ Despertador Inteligente
 
 ## 📖 Descripción
-Este proyecto es un simulador de un Despertador Inteligente programado en Java. Permite gestionar múltiples alarmas, organizarlas y asegurarnos de que el usuario se despierte mediante retos interactivos. 
+Despertador Inteligente es una aplicación de consola en Java que simula la gestión de alarmas personales. El proyecto permite crear alarmas con categoría, día de la semana, sonido y volumen, y ofrece funcionalidades como modo vacaciones, repetición "snooze" y retos matemáticos para desactivar alarmas.
 
-El proyecto se ha desarrollado siguiendo el flujo de trabajo profesional con Git y GitHub (Git Flow con ramas de funcionalidad y Pull Requests).
+## 🎯 Objetivos
+- Crear una estructura sencilla para manejar alarmas en Java.
+- Permitir la configuración de alarmas con días de la semana y atributos adicionales.
+- Mostrar alarmas activas y detectar cuándo deben sonar según la hora y el día actual.
+- Incluir funcionalidades extra como suspensión temporal (`snooze`) y desafíos matemáticos para apagar la alarma.
 
-## 🚀 Instrucciones de compilación y ejecución
-Para probar el programa desde la consola de comandos, sigue estos pasos:
+## 🛠️ Tecnologías
+- Java 8+ (o compatible)
+- Sin dependencias externas
+- Organizado en las clases: `Alarm`, `AlarmManager`, `MathChallenge` y `Main`
 
+## ⚙️ Instalación / Ejecución
 1. Abre una terminal y navega hasta la carpeta raíz del proyecto.
-2. Compila todos los archivos Java ejecutando el siguiente comando:
+2. Compila todos los archivos Java:
    `javac src/*.java`
-3. Ejecuta la clase principal con el siguiente comando:
+3. Ejecuta el programa:
    `java -cp src Main`
 
-## ✨ Funcionalidades Avanzadas Implementadas
-Además de los atributos básicos (hora y minuto), se han implementado tres funcionalidades avanzadas en las clases `Alarm`, `AlarmManager` y `MathChallenge`:
+> Nota: El proyecto se ejecuta desde la carpeta raíz del repositorio y asume que los archivos `.java` se encuentran en el subdirectorio `src/`.
 
-1. **Categorías Personalizadas:** Cada alarma tiene un atributo `category` que permite identificar para qué es (ej. "Trabajo", "Gimnasio").
-2. **Modo Vacaciones:** Un interruptor en `AlarmManager` que, al activarse, silencia automáticamente todas las alarmas programadas.
-3. **Reto Matemático para Apagar:** Si una alarma tiene activado el reto, el usuario debe resolver una suma generada aleatoriamente (clase `MathChallenge`) antes de que la alarma se desactive. Si falla, sigue sonando.
+## 📌 Estructura principal
+- `src/Alarm.java` — modelo de alarma con hora, categoría, días de la semana, sonido, volumen y métodos como `snooze()`.
+- `src/AlarmManager.java` — gestiona la lista de alarmas, comprueba alarmas activas y muestra las próximas alarmas.
+- `src/MathChallenge.java` — genera un desafío matemático para apagar alarmas con reto activado.
+- `src/Main.java` — clase principal de ejecución del programa.
