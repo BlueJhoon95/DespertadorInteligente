@@ -4,11 +4,11 @@ public class Main {
 
         AlarmManager manager = new AlarmManager();
 
-        Alarm alarmaEstudio = new Alarm(16, 0, "Estudiar Programación");
-        alarmaEstudio.setMathChallenge(true); 
+        Alarm alarmaEstudio = new Alarm(16, 0, "Estudiar Programación", "LMXJVSD");
+        alarmaEstudio.setMathChallenge(true);
         manager.addAlarm(alarmaEstudio);
 
-        manager.checkAlarms(16, 0);
+        manager.checkAlarms("X", 16, 0);
 
         System.out.println("\n[Usuario intenta detener la alarma...]");
         
